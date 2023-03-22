@@ -1,0 +1,22 @@
+﻿@model UserInformation
+<!DOCTYPE html>
+<html>
+<title> Login page </title>
+<body>
+<div style="color:red">@ViewBag.message</div>
+<form asp-action="Login" method="post">
+    <div  asp-validation-for="Email"></div>
+    <p>
+        <label asp-for="Email">Your Email: </label>
+        <input asp-for="Email" />
+    </p>
+    <p>
+        <label asp-for="Pass">Enter Password: </label>
+        <input type="password" asp-for="Pass" />
+    </p>
+
+    <button type="submit">Login</button>
+   <button><a asp-action="SignUp">SigUp</a> </button>
+</form>
+    </body>
+</html>

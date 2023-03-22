@@ -1,0 +1,43 @@
+﻿@model UserInformation
+
+
+<!DOCTYPE html>
+<html>
+<title> User Information </title>
+<link rel="stylesheet" href="~/css/site.css" />
+<div class="text-center">
+    <h1> Signup </h1>
+    <div style="color:red">@ViewBag.message</div>
+    <body class="text-right">
+        <form asp-action="Signup" method="post">
+            <p>
+                <label asp-for="FName">First Name: </label>
+                <input asp-for="FName" />  @Html.ValidationMessageFor(m => m.FName, "", new { @style = "color:red" })
+
+            </p>
+            <p>
+                <label asp-for="LName"> Last Name: </label>
+                <input asp-for="LName" /> @Html.ValidationMessageFor(m => m.LName, "", new { @style = "color:red" })
+            </p>
+            <p>
+                <label asp-for="Email">Email: </label>
+                <input asp-for="Email" /> @Html.ValidationMessageFor(m => m.Email, "", new { @style = "color:red" })
+            </p>
+            <p>
+                <label asp-for="Phone">Phone: </label>
+                <input type="number" asp-for="Phone" /> @Html.ValidationMessageFor(m => m.Phone, "", new { @style = "color:red" })
+            </p>
+            <p>
+                <label asp-for="Pass">Password: </label>
+                <input type="password" asp-for="Pass" /> @Html.ValidationMessageFor(m => m.Pass, "", new { @style = "color:red" })
+            </p>
+            <p>
+                <label asp-for="CPass">Confirm Password: </label>
+                <input type="password" asp-for="CPass" /> @Html.ValidationMessageFor(m => m.CPass, "", new { @style = "color:red" })
+            </p>
+            <button type="submit">Signup</button>
+        </form>
+    </body>
+    <button><a asp-action="Login">Login</a></button>
+</div>
+</html>

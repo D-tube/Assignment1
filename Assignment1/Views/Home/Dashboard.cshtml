@@ -1,0 +1,11 @@
+﻿@model IEnumerable<UserInformation>
+
+<title> Dashboard you </title>
+<body>
+    @foreach (UserInformation r in Model)
+    {
+        <h1>User: @r.FName @r.LName <br />  Email: @r.Email</h1>
+    }
+    <a asp-action="ListUsers">User Listing</a> <a asp-action="Login">Sign out</a>
+</body>
+
